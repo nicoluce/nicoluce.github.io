@@ -1,0 +1,76 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "sourceType": "module"
+  },
+  "plugins": ["html", "prettier", "react", "react-hooks", "eslint-plugin-import"],
+  "extends": [
+    "react-app",
+    "prettier",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "prettier/@typescript-eslint",
+    "plugin:import/typescript"
+  ],
+  "rules": {
+    "prettier/prettier": ["error", {
+      "printWidth": 100,
+      "tabWidth": 2,
+      "useTabs": false,
+      "singleQuote": false,
+      "semi": true,
+      "trailingComma": "none",
+      "bracketSpacing": true,
+      "jsxBracketSameLine": false,
+      "arrowParens": "avoid",
+      "endOfLine": "auto"
+    }],
+    // allow paren-less arrow functions
+    "arrow-parens": 0,
+    "generator-star-spacing": 0,
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "@typescript-eslint/no-use-before-define": "off",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/camelcase": "off",
+    "@typescript-eslint/explicit-member-accessibility": "off",
+    "@typescript-eslint/ban-ts-ignore": "off",
+    "@typescript-eslint/no-non-null-assertion": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/no-empty-interface": "off",
+    "@typescript-eslint/no-var-requires": "off",
+    "react/prop-types": "off",
+    "react/display-name": "off",
+    "no-console": ["error", { "allow": ["warn", "error"] }],
+    // "max-len": ["error", { "code": 100, "ignoreStrings": true, "ignoreRegExpLiterals": true }],
+    "import/order": [
+      "error",
+      {
+        "groups": ["builtin", "external", "index", "parent", "sibling", "internal"],
+        "alphabetize": { "order": "asc", "caseInsensitive": true }
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": ["*.js"],
+      "rules": {
+        "typescript/no-var-requires": "off",
+        "no-prototype-builtins": "off",
+        "prefer-const": "off",
+        "@typescript-eslint/class-name-casing": "off",
+        "@typescript-eslint/no-empty-function": "off"
+      }
+    }
+  ],
+  "settings": {
+    "react": {
+      "version": "detect"
+    },
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    }
+  }
+}
