@@ -42,7 +42,9 @@
     "test": "craco test",
     "eject": "react-scripts eject",
     "lint": "tsc --noEmit && eslint . --ext ts --ext tsx --ext js",
-    "lint:fix": "tsc --noEmit && eslint --fix . --ext ts --ext tsx --ext js"
+    "lint:fix": "tsc --noEmit && eslint --fix . --ext ts --ext tsx --ext js",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "browserslist": {
     "production": [
