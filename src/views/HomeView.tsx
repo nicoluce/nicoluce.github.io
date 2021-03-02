@@ -1,4 +1,5 @@
 import { Layout } from "antd";
+import DiceRoller from "components/DiceRoller";
 import React from "react";
 import { connect, ConnectedProps } from "react-redux";
 import { AppState } from "store";
@@ -15,6 +16,7 @@ const HomeView: React.FunctionComponent<Props> = props => {
     <Layout>
       <Layout.Header></Layout.Header>
       <Layout.Content style={{ display: "flex", alignItems: "baseline" }}>
+        <DiceRoller />
       </Layout.Content>
       <Layout.Footer></Layout.Footer>
     </Layout>
